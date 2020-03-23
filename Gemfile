@@ -28,6 +28,18 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+#It provides flexible authentication solution for Rails with Warden
+gem 'devise', '~> 4.7'
+
+#Bootstrap 4 ruby gem for Ruby on Rails (Sprockets) and Hanami (formerly Lotus)
+# gem 'bootstrap', '~> 4.4.1'
+# gem 'bootstrap-sass', '~> 3.2.0'
+# gem 'autoprefixer-rails'
+gem 'devise-i18n'
+gem 'devise-bootstrap-views', '~> 1.0'
+
+gem 'jquery-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
