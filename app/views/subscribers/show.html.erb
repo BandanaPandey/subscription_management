@@ -5,11 +5,25 @@
       <%= link_to('Delete Subscription', subscriber_path(current_user.id), method: :delete, class: 'btn btn-primary') %>        
     </span>
   </div>
+</div>
+
+<div class="card" style="text-align: center;">
+  <div class="card-header">
+    <h6 class="card-title"><b><%= current_user.email %></b> on <b><%= @subscription['plan']['name'] %></b> . <b><%= @subscription['plan']['nickname'] %> </b>(<%= @subscription["status"] %>)</h6>
+  </div>
   <div class="card-body">
-    <p class="card-text">Subscription Details:</p>
-    <p class="card-text">"SubscriptionId = <%= @subscription['id']%>"</p>
-    <p class="card-text">"PlanName = <%= @subscription['plan']['name']%>"</p>
-    <p class="card-text">"PlanCurrency = <%= @subscription['plan']['currency']%>"</p>
-    <p class="card-text">"PlanAmount = <%= @subscription['plan']['amount_decimal']%>"</p>
+    <p class="card-text"><b>Next Invoice::</b> <%= (Time.at(@subscription["start_date"]).to_date  + 1.month).strftime("%b %d %Y") %></p>
+    <p class="card-text"><b>Started::</b> <%= Time.at(@subscription["start_date"]).strftime("%b %d %Y") %></p>
+  </div>
+</div>
+
+<div class="card" style="text-align: center;">
+  <div class="card-header">
+    <h6 class="card-title"><b>Pricing</b></h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><b>Plan::</b> <%= @subscription['plan']['name'] %> . <%= @subscription['plan']['nickname'] %></p>
+    <p class="card-text"><b>Amount::</b> <%= @subscription['plan']['currency']%> <%= @subscription['plan']['amount_decimal']%> / <%= @subscription['plan']['interval']%></p>
+    <p class="card-text"><b>Subscription ID::</b> <%= @subscription['id'] %></p>
   </div>
 </div>
