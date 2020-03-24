@@ -16,6 +16,7 @@ In this Ruby on Rails Application, we have integrated stripe for payment's subsc
 
 
 
+
 Following steps are followed here:
 
 * Whenever, User logIn
