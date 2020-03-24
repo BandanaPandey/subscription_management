@@ -3,7 +3,9 @@
     <h5 class="card-title"><%= link_to('Welcome', root_path) %></h5>
     <span style="float: right;">
       <% if user_signed_in? %>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary') %>
+        <%= current_user.email %>
+        |
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
       <% else %>
         <%= link_to('Login', new_user_session_path) %>
       <% end %>
