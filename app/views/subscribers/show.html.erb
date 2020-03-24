@@ -1,0 +1,14 @@
+<div class="card" style="text-align: center;">
+  <div class="card-header">
+    <h5 class="card-title"><%= link_to('Welcome', root_path) %> </h5>
+    <span style="float: right;">
+      <%= link_to('Delete Subscription', subscriber_path(current_user.id), method: :delete, class: 'btn btn-primary') %>        
+    </span>
+  </div>
+  <div class="card-body">
+    <p class="card-text">"SubscriptionId = <%= @subscription['id']%>"</p>
+    <p class="card-text">"PlanName = <%= @subscription['plan']['name']%>"</p>
+    <p class="card-text">"PlanCurrency = <%= @subscription['plan']['currency']%>"</p>
+    <p class="card-text">"PlanAmount = <%= @subscription['plan']['amount_decimal']%>"</p>
+  </div>
+</div>
