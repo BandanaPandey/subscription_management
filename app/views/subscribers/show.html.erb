@@ -9,6 +9,7 @@
 
 <div class="card" style="text-align: center;">
   <div class="card-header">
+    <p class="card-text">You are on <b>SUBSCRIPTION DETAILS </b>Page</p>
     <h6 class="card-title"><b><%= current_user.email %></b> on <b><%= @subscription['plan']['name'] %></b> . <b><%= @subscription['plan']['nickname'] %> </b>(<%= @subscription["status"] %>)</h6>
   </div>
   <div class="card-body">
